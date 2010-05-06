@@ -3,7 +3,7 @@
 <head>
 	<title><?php echo $this->pageTitle; ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<meta name="language" content="<?php echo app()->language; ?>" />
+	<meta name="language" content="<?php echo Yii::app()->language; ?>" />
 	<meta name="description" content="<?php echo $this->pageDescription ?>" />
 	<meta name="keywords" content="<?php echo $this->pageKeywords ?>" />
 	
