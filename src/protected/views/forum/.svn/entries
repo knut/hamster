@@ -1,0 +1,76 @@
+8
+
+dir
+5
+https://yiiforum.googlecode.com/svn/trunk/src/protected/views/forum
+https://yiiforum.googlecode.com/svn
+
+
+
+2009-03-18T20:52:29.294711Z
+2
+knut.urdalen
+
+
+svn:special svn:externals svn:needs-lock
+
+view.php
+file
+
+
+
+
+2009-03-18T20:49:21.000000Z
+546733e06f88b439faf968e7661d26b5
+2009-03-18T20:52:29.294711Z
+2
+knut.urdalen
+
+list.php
+file
+
+
+
+
+2009-03-18T20:49:21.000000Z
+5ef01d0b0e4b561fa027b6ba28e83a4e
+2009-03-18T20:52:29.294711Z
+2
+knut.urdalen
+
+create.php
+file
+
+
+
+
+2009-03-18T20:49:21.000000Z
+fdffa94508cc4b3ab163e866460bcd19
+2009-03-18T20:52:29.294711Z
+2
+knut.urdalen
+
+edit.php
+file
+
+
+
+
+2009-03-18T20:49:21.000000Z
+fd6d049e4351f419cce119fde68fe33c
+2009-03-18T20:52:29.294711Z
+2
+knut.urdalen
+
+admin.php
+file
+
+
+
+
+2009-03-18T20:49:21.000000Z
+0524a733fb2b2f22d682a2d4f4097a37
+2009-03-18T20:52:29.294711Z
+2
+knut.urdalen
+

@@ -1,0 +1,13 @@
+
+
+SQLite
+------
+
+$ cd src/protected/data
+$ sqlite3 -init schema.sqlite.sql hamster.db
+$ chmod 777 hamster.db
+
+MySQL
+-----
+
+CREATE DATABASE `hamster` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;

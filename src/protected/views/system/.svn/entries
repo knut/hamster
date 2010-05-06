@@ -1,0 +1,28 @@
+8
+
+dir
+5
+https://yiiforum.googlecode.com/svn/trunk/src/protected/views/system
+https://yiiforum.googlecode.com/svn
+
+
+
+2009-03-18T20:52:29.294711Z
+2
+knut.urdalen
+
+
+svn:special svn:externals svn:needs-lock
+
+.yii
+file
+
+
+
+
+2009-03-18T20:49:21.000000Z
+d41d8cd98f00b204e9800998ecf8427e
+2009-03-18T20:52:29.294711Z
+2
+knut.urdalen
+
