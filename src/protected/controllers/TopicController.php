@@ -1,6 +1,6 @@
 <?php
 
-class TopicController extends CController
+class TopicController extends Controller
 {
 	const PAGE_SIZE=10;
 

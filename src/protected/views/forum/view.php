@@ -1,3 +1,6 @@
+<?php $this->pageTitle = $forum->name.' - '.Yii::app()->name; ?>
+<?php $this->pageDescription = $forum->description; ?>
+
 <div class="crumbs">
   &laquo; <?php echo CHtml::link(Yii::t('messages', 'Home'), array('/')) ?>
 </div>

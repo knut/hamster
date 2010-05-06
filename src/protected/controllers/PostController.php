@@ -1,6 +1,6 @@
 <?php
 
-class PostController extends CController
+class PostController extends Controller
 {
 	const PAGE_SIZE=10;
 

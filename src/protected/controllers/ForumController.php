@@ -1,6 +1,6 @@
 <?php
 
-class ForumController extends CController
+class ForumController extends Controller
 {
 	const PAGE_SIZE = 10;
 

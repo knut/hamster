@@ -1,6 +1,6 @@
 <?php
 
-class UserController extends CController {
+class UserController extends Controller {
 	
 	const PAGE_SIZE = 50;
 
