@@ -14,10 +14,10 @@
 	<?php Yii::app()->clientScript->registerLinkTag('alternate', 'application/rss+xml', $this->createUrl('posts/feed'), 'screen', array('title' => Yii::app()->params['title']." - Latest posts")); ?>
 	
 	<?php //if($this->beginCache('scripts')): ?>
-	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/prototype.js"></script>
+	<!--<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/prototype.js"></script>
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/effects.js"></script>
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/lowpro.js"></script>
-	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/application.js"></script>
+	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/application.js"></script>-->
 	<?php //$this->endCache(); endif; ?>
 	
 </head>
@@ -47,7 +47,7 @@
 
 	  	</ul>-->
 	  
-		<h1><?php echo CHtml::encode(Yii::app()->name); ?></h1>
+		<h1><?php echo CHtml::link(CHtml::encode(Yii::app()->name), array('/')); ?></h1>
 	</div>
 
 	<div id="content">
@@ -79,9 +79,8 @@
 
 <?php //if($this->beginCache('footer')): ?>
 <div id="footer">
-	<p class="credit">	
-		<?php echo Yii::app()->params['copyrightInfo'] ?><br/>
-		<?php echo Yii::powered(); ?>
+	<p class="credit">
+		Powered by <a href="http://www.urdalen.com">Knut Urdalen</a>'s <a href="http://github.com/knut/hamster">Hamster</a>
 	</p>
 </div>
 <?php //$this->endCache(); endif; ?>

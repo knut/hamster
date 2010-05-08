@@ -6,12 +6,12 @@
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 return array(
-	
-	'name' => 'My Hamster',
-	
+	'name' => 'My Forum',	
 	'basePath' => dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
+	'sourceLanguage' => 'en',
+	'language' => 'nb_NO',
+	'defaultController' => 'site',
 	
-
 	// preloading 'log' component
 	'preload'=>array('log'),
 
@@ -20,17 +20,18 @@ return array(
 		'application.models.*',
 		'application.components.*',
 	),
+	
+	// application-level parameters that can be accessed
+	// using Yii::app()->params['paramName']
+	'params' => require(dirname(__FILE__).'/params.php'),
 
 	// application components
 	'components'=>array(
-		'user'=>array(
-			// enable cookie-based authentication
-			'allowAutoLogin'=>true,
+		'assetManager' => array(
+			'class' => 'CAssetManager',
 		),
-		'urlManager' => array(
-			'urlFormat' => 'path',
-			'showScriptName' => false,
-			'rules' => require(dirname(__FILE__).'/rules.php'),
+		'authManager' => array(
+			'class' => 'CAuthManager',
 		),
 		'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/hamster.db',
@@ -45,10 +46,17 @@ return array(
 			'charset' => 'utf8',
 		),
 		*/
-		'errorHandler'=>array(
+		'clientScript' => array(
+			'class' => 'CClientScript',
+		),
+		'coreMessages' => array(
+			'class' => 'CPhpMessageSource',
+		),
+		'errorHandler' => array( // handles uncaught PHP errors and exceptions
+			'class' => 'CErrorHandler',
 			// use 'site/error' action to display errors
-            'errorAction'=>'site/error',
-        ),
+			'errorAction'=>'site/error',
+		),
 		'log'=>array(
 			'class'=>'CLogRouter',
 			'routes'=>array(
@@ -64,10 +72,29 @@ return array(
 				*/
 			),
 		),
-	),
-
-	// application-level parameters that can be accessed
-	// using Yii::app()->params['paramName']
-	'params' => require(dirname(__FILE__).'/params.php'),
-	
+		'messages' => array( // provides translated messages used by Yii application
+			'class' => 'CPhpMessageSource',
+		),
+		'request' => array( // provides information related to user request
+			'class' => 'CHttpRequest',
+		),
+		'session' => array(
+			'class' => 'CHttpSession',
+		),
+		'statePersister' => array(
+			'class' => 'CStatePersister',
+		),
+		'themeManager' => array(
+			'class' => 'CThemeManager',
+		),
+		'user'=>array(
+			// enable cookie-based authentication
+			'allowAutoLogin'=>true,
+		),
+		'urlManager' => array(
+			'urlFormat' => 'path',
+			'showScriptName' => false,
+			'rules' => require(dirname(__FILE__).'/rules.php'),
+		),
+	),	
 );

@@ -13,9 +13,9 @@
       	</td>
 		<td class="c2 vat">
 			<?php echo CHtml::link($forum->name, array('view', 'id' => $forum->id), array('class' => 'title')); ?>
-      		<div class="posts">
-        		<?php echo CHtml::encode($forum->topics_count); ?> topics, 
-        		<?php echo CHtml::encode($forum->posts_count); ?> posts
+      		<div class="posts">				
+        		<?php echo CHtml::encode($forum->topics_count); ?> <?php echo Yii::t('messages', '1#topic|n>1#topics', array($forum->topics_count)); ?>, 
+        		<?php echo CHtml::encode($forum->posts_count); ?> <?php echo Yii::t('messages', '1#post|n>1#posts', array($forum->posts_count)); ?>
       		</div>
       		<p class="desc">
       			<?php echo CHtml::encode($forum->description); ?>
@@ -24,7 +24,7 @@
 		<td class="lp">	
 			<?php if($forum->last_post): ?>
 			<?php echo Yii::t('messages', 'Latest post') ?> <?php echo CHtml::link(Yii::app()->dateFormatter->formatDateTime($forum->last_post->created_at, 'medium', 'short'), array('topic/view', 'id' => $forum->last_post->topic->id)) ?> 
-			<br />by <?php echo CHtml::link($forum->last_post->author->name, array('user/view', 'id' => $forum->last_post->author->id)) ?>
+			<br /><?php echo Yii::t('messages', 'by'); ?> <?php echo CHtml::link($forum->last_post->author->name, array('user/view', 'id' => $forum->last_post->author->id)) ?>
 			<?php endif; ?>
 		</td>
 		<td class="c3">

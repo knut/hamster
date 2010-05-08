@@ -12,6 +12,4 @@ return array(
 	
 	'date_format' => 'M j, Y g:ia',
 	
-	// the copyright information displayed in the footer section
-	'copyrightInfo' => 'Copyright &copy; 2009-2010 <a href="http://www.urdalen.com">Knut Urdalen</a>',
 );

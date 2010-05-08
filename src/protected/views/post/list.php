@@ -1,6 +1,11 @@
 <h1><?php echo Yii::t('messages', 'Recent Posts') ?></h1>
 
-<?php $this->widget('CLinkPager',array('pages' => $pages)); ?>
+<?php $this->widget('CLinkPager', array(
+	'pages' => $pages,
+	'header' => Yii::t('messages', 'Go to page:'),
+	'prevPageLabel' => Yii::t('messages', '< Previous'),
+	'nextPageLabel' => Yii::t('messages', 'Next >'),
+)); ?>
 <br/>
 <br/>
 <table border="0" cellspacing="0" cellpadding="0" class="posts wide">
@@ -12,11 +17,9 @@
 	      	<?php echo Yii::app()->dateFormatter->formatDateTime($post->created_at, 'medium', 'short') ?>
 	      </abbr>
 	    </div>
-
-	    <img alt="Avatar" class="photo" height="32" src="http://www.gravatar.com/avatar/<?php echo md5($post->author->email) ?>.jpg&amp;rating=PG&amp;size=32" width="32" />
+	    <img alt="<?php echo $post->author->name ?>" class="photo" height="32" src="http://www.gravatar.com/avatar/<?php echo md5($post->author->email) ?>.jpg&amp;rating=PG&amp;size=32" width="32" />
 	    <span class="fn"><?php echo CHtml::link($post->author->name, array('user/view', 'id' => $post->author->id)) ?></span>
-
-	    <span class="posts"><?php echo $post->author->postscounttext ?></span>
+	    <span class="posts"><?php echo $post->author->posts_count; ?> <?php echo Yii::t('messages', '1#post|n>1#posts', array($post->author->posts_count)); ?></span>
 	  </td>
 	  <td class="body entry-content">
 	    <p class="topic">
@@ -34,4 +37,9 @@
 <?php endforeach; ?>
 </table>
 <br/>
-<?php $this->widget('CLinkPager',array('pages'=>$pages)); ?>
+<?php $this->widget('CLinkPager', array(
+	'pages' => $pages,
+	'header' => Yii::t('messages', 'Go to page:'),
+	'prevPageLabel' => Yii::t('messages', '< Previous'),
+	'nextPageLabel' => Yii::t('messages', 'Next >'),
+)); ?>

@@ -5,7 +5,7 @@
  */
 
 // change the following paths if necessary
-$yii=dirname(__FILE__).'/../../../yii/svn/trunk/framework/yii.php';
+$yii=dirname(__FILE__).'/protected/lib/yii/yii.php';
 $config=dirname(__FILE__).'/protected/config/test.php';
 
 // remove the following line when in production mode
