@@ -31,10 +31,15 @@ return array(
 			'class' => 'CAssetManager',
 		),
 		'authManager' => array(
-			'class' => 'CAuthManager',
+			'class' => 'CPhpAuthManager',
 		),
-		'db'=>array(
+		'db' => array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/hamster.db',
+			//'connectionString' => 'mysql:host=localhost;dbname=hamster',
+			'username' => '',
+			'password' => '',
+			'charset' => 'utf8',
+			'enableProfiling' => true,
 		),
 		// uncomment the following to use a MySQL database
 		/*
@@ -46,6 +51,9 @@ return array(
 			'charset' => 'utf8',
 		),
 		*/
+		'cache' => array(
+			'class' => 'CDummyCache',
+		),
 		'clientScript' => array(
 			'class' => 'CClientScript',
 		),
@@ -58,18 +66,21 @@ return array(
 			'errorAction'=>'site/error',
 		),
 		'log'=>array(
-			'class'=>'CLogRouter',
-			'routes'=>array(
+			'class' => 'CLogRouter',
+			'routes' => array(
 				array(
-					'class'=>'CFileLogRoute',
-					'levels'=>'error, warning',
+					'class' => 'CFileLogRoute',
+					'levels' => 'error, warning',
 				),
 				// uncomment the following to show log messages on web pages
-				/*
+				array(
+					'class' => 'CProfileLogRoute',
+					'report' => 'summary', // execution time summary, slowest on top (default)
+					//'report' => 'callstack', // reflecting the calling sequence
+				),
 				array(
 					'class'=>'CWebLogRoute',
 				),
-				*/
 			),
 		),
 		'messages' => array( // provides translated messages used by Yii application
