@@ -71,4 +71,16 @@ class Topic extends CActiveRecord
 		$this->sticky = ($value == true) ? 1 : 0;
 	}
 	
+	protected function beforeSave() {
+		if(parent::beforeSave()) {
+			$now = date('Y-m-d H:i:s');
+			if($this->isNewRecord) {
+				$this->created_at = $now;
+			}
+			$this->updated_at = $now;
+			return true;
+		}
+		return false;
+	}
+
 }

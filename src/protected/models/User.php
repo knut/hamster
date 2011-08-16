@@ -68,6 +68,20 @@ class User extends CActiveRecord {
 		return date('M j, Y g:ia');
 	}
 
+	protected function beforeSave() {
+		if(parent::beforeSave()) {
+			$now = date('Y-m-d H:i:s');
+			if($this->isNewRecord) {
+				$this->created_at = $now;
+				$this->last_seen_at = $now;
+				$this->last_login_at = $now;
+			}
+			$this->updated_at = $now;
+			return true;
+		}
+		return false;
+	}
+
 	/*public function attributeLabels()
 	{
 		return array(
