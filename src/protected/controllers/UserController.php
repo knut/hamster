@@ -84,7 +84,7 @@ class UserController extends Controller {
 				
 				// TODO: validate passwords
 				
-				$now = date('Y-m-d H:i:s');
+				
 				
 				$user = new User();
 				//$user->attributes = $_POST['SignupForm'];
@@ -92,10 +92,8 @@ class UserController extends Controller {
 				$user->email = $_POST['SignupForm']['email'];
 				$user->password_hash = md5($_POST['SignupForm']['password']);
 				$user->display_name = $_POST['SignupForm']['display_name'];
-				$user->created_at = $now;
 				$user->admin = 0;
 				$user->posts_count = 0;
-				$user->last_seen_at = $now;
 				$user->activated = 0;
 				$user->login_key = md5($user->password_hash + $user->email);
 				$user->login_key_expires_at = date('Y-m-d H:i:s', strtotime('+1 day'));
@@ -108,7 +106,7 @@ class UserController extends Controller {
 					); ;*/
 					//var_dump($users);
 					
-					if($user->validate()) {
+					//if($user->validate()) {
 						
 						if($user->save(false)) {
 							
@@ -134,9 +132,9 @@ class UserController extends Controller {
 							var_dump($user->getErrors());
 						}
 						
-					} else {
+					/*} else {
 						var_dump($user->getErrors());
-					}
+					}*/
 					
 					
 				//}

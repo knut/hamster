@@ -17,7 +17,7 @@ class ForumController extends Controller
 	public function filters()
 	{
 		return array(
-			'accessControl', // perform access control for CRUD operations
+			//'accessControl', // perform access control for CRUD operations
 		);
 	}
 
@@ -38,10 +38,10 @@ class ForumController extends Controller
 				'actions'=>array('admin'),
 				'users'=>array('admin'),
 			),
-			array('deny',  // deny access to admin operation for all users
+			/*array('deny',  // deny access to admin operation for all users
 				'actions'=>array('admin'),
 				'users'=>array('*'),
-			),
+			),*/
 		);
 	}
 
@@ -62,14 +62,14 @@ class ForumController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$forum=new forum;
-		if(isset($_POST['forum']))
+		$forum = new Forum();
+		if(isset($_POST['Forum']))
 		{
-			$forum->attributes=$_POST['forum'];
+			$forum->attributes = $_POST['Forum'];
 			if($forum->save())
-				$this->redirect(array('show','id'=>$forum->id));
+				$this->redirect(array('show',' id' => $forum->id));
 		}
-		$this->render('create',array('forum'=>$forum));
+		$this->render('create',array('forum' => $forum));
 	}
 
 	/**
