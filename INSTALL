@@ -1,4 +1,13 @@
+Yii Framework
+-------------
+Fetch latest release of Yii Framework (required).
 
+$ cd src
+$ bash install.sh
+
+Database
+--------
+Choose your favorite DB engine.
 
 SQLite
 ------
@@ -10,4 +19,7 @@ $ chmod 777 hamster.db
 MySQL
 -----
 
-CREATE DATABASE `hamster` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+mysql> CREATE DATABASE hamster DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+$ cd src/protected/data
+$ cat schema.mysql.sql | mysql -u root -p hamster
+
