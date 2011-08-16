@@ -114,6 +114,18 @@ class Post extends CActiveRecord
 		return $html;
 	}
 
+	protected function beforeSave() {
+		if(parent::beforeSave()) {
+			$now = date('Y-m-d H:i:s');
+			if($this->isNewRecord) {
+				$this->created_at = $now;
+			}
+			$this->updated_at = $now;
+			return true;
+		}
+		return false;
+	}
+
 	/*public function attributeLabels()
 	{
 		return array(
