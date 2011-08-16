@@ -34,7 +34,7 @@ class LoginForm extends CFormModel
 	public function attributeLabels()
 	{
 		return array(
-			'username' => 'Login (or OpenID URL)',
+			'username' => 'Login',
 		);
 	}
 
