@@ -1,20 +1,20 @@
+<!--<div class="actions">
+	<a href="#">Profile</a> | <a href="#">Settings</a>
+</div>-->
+
 <h1><?php echo $user->name ?></h1>
 
-<p style="float: right;"><img alt="Avatar" class="photo" height="80" src="http://www.gravatar.com/avatar/<?php echo md5($user->email) ?>.jpg&amp;rating=PG&amp;size=80" width="80" /></p> 
+<p style="float: right;"><img alt="<?php echo $user->name ?>" class="photo" height="80" src="http://www.gravatar.com/avatar/<?php echo md5($user->email) ?>.jpg&amp;rating=PG&amp;size=80" width="80" /></p> 
 
 <p class="subtitle">
-  <a href="/users/506/posts.rss"><img alt="Subscribe to <?php echo $user->name ?>" height="14" src="<?php echo Yii::app()->request->baseUrl; ?>/images/feed-icon.png?1217504846" width="14" /></a>
+  <a href="#"><img alt="Subscribe to <?php echo $user->name ?>" height="14" src="<?php echo Yii::app()->request->baseUrl; ?>/images/feed-icon.png?1217504846" width="14" /></a>
   <span>
-	<?php echo $user->topics_count ?> <?php echo Yii::t('messages', 'topics') ?>,
-	<?php echo $user->posts_count ?> <?php echo Yii::t('messages', 'posts') ?> (view all)
-	
-	
-    <!--5 emne(r), 
-    66 innlegg
+	<?php echo $user->topics_count ?> <?php echo Yii::t('messages', '1#topic|n>1#topics', array($user->topics_count)); ?>,
+	<?php echo $user->posts_count ?> <?php echo Yii::t('messages', '1#post|n>1#posts', array($user->posts_count)) ?>
+    <!--
     (vis <a href="/users/506/posts">alle</a> | 
     <a href="/users/506/monitored">overvåket</a> innlegg)<br />
 	-->
-	
   </span>
 </p>
 

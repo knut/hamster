@@ -1,9 +1,10 @@
 
-<!--<div class="actionBar">
-[<?php echo CHtml::link('New forum',array('create')); ?>]
-[<?php echo CHtml::link('Manage forum',array('admin')); ?>]
-</div>-->
-	
+<div class="actions">
+<?php if(Yii::app()->user->checkAccess('op_create_forum')): ?>
+	<?php echo CHtml::link('New forum', array('create')); ?> |
+	<?php echo CHtml::link('Manage forum',array('admin')); ?>
+<?php endif; ?>
+</div>
 
 <table border="0" cellspacing="0" cellpadding="0" class="wide forums">
 <?php foreach($forums as $forum): ?>

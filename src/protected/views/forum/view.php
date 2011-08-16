@@ -8,6 +8,10 @@
 <h1><?php echo $forum->name; ?></h1>
 <p><?php echo CHtml::encode($forum->description); ?></p>
 
+<div class="actions">
+	<?php echo CHtml::link(Yii::t('messages', 'New Topic'), array("forum/{$forum->id}/topic/new")); ?>
+</div>
+
 <table border="0" cellspacing="0" cellpadding="0" class="wide topics">
 	<tr>
 		<th class="la" colspan="2"><?php echo Yii::t('messages', 'Topic') ?></th>

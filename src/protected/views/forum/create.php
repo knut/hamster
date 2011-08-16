@@ -19,24 +19,16 @@
 <?php echo CHtml::activeTextArea($forum,'description',array('rows'=>6, 'cols'=>50)); ?>
 </div>
 <div class="simple">
-<?php echo CHtml::activeLabel($forum,'topics_count'); ?>
-<?php echo CHtml::activeTextField($forum,'topics_count'); ?>
-</div>
-<div class="simple">
-<?php echo CHtml::activeLabel($forum,'posts_count'); ?>
-<?php echo CHtml::activeTextField($forum,'posts_count'); ?>
-</div>
-<div class="simple">
 <?php echo CHtml::activeLabel($forum,'position'); ?>
 <?php echo CHtml::activeTextField($forum,'position'); ?>
 </div>
 <div class="simple">
-<?php echo CHtml::activeLabel($forum,'created'); ?>
-<?php echo CHtml::activeTextField($forum,'created'); ?>
+<?php echo CHtml::activeLabel($forum,'created_at'); ?>
+<?php echo CHtml::activeTextField($forum,'created_at'); ?>
 </div>
 <div class="simple">
-<?php echo CHtml::activeLabel($forum,'modified'); ?>
-<?php echo CHtml::activeTextField($forum,'modified'); ?>
+<?php echo CHtml::activeLabel($forum,'updated_at'); ?>
+<?php echo CHtml::activeTextField($forum,'updated_at'); ?>
 </div>
 
 <div class="action">
