@@ -34,7 +34,7 @@ return array (
   'Get a new code' => 'Hent ny kode',
   'Home' => 'Hjem',
   'Last post' => 'Siste innlegg',
-  'Latest topics' => 'Siste emne(r)',
+  'Latest topics' => 'Siste emner',
   'Letters are not case-sensitive.' => 'Bokstaver er ikke case-sensitive',
   'Login' => 'Logg inn',
   'Logins should start with least 2 characters and may consist of letters, numbers, or the underscore.' => 'Brukernavn bør starte med minst to tegn, og kan bestå av tall, bokstaver eller understrek.',
