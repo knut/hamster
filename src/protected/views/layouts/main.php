@@ -8,17 +8,9 @@
 	<meta name="keywords" content="<?php echo $this->pageKeywords ?>" />
 	
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
 	
 	<?php Yii::app()->clientScript->registerCoreScript('jquery') ?>
 	<?php Yii::app()->clientScript->registerLinkTag('alternate', 'application/rss+xml', $this->createUrl('posts/feed'), 'screen', array('title' => Yii::app()->params['title']." - Latest posts")); ?>
-	
-	<?php //if($this->beginCache('scripts')): ?>
-	<!--<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/prototype.js"></script>
-	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/effects.js"></script>
-	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/lowpro.js"></script>
-	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/application.js"></script>-->
-	<?php //$this->endCache(); endif; ?>
 	
 </head>
 <body>	
