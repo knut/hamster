@@ -27,7 +27,7 @@ class Forum extends CActiveRecord
 	{
 		return array(
 			array('name','length','max'=>255),
-			array('name, description, topics_count, posts_count, position, created, modified', 'required'),
+			array('name, description, topics_count, posts_count, position, created_at, updated_at', 'required'),
 			array('topics_count, posts_count, position', 'numerical', 'integerOnly'=>true),
 		);
 	}
@@ -38,7 +38,7 @@ class Forum extends CActiveRecord
 			//'last_topic' => array(self::HAS_ONE, 'Topic', 'forum_id', 'order' => 'replied_at DESC'),
 			// SELECT replied_at, replied_by, last_post_id FROM topics WHERE forum_id = 1 ORDER BY replied_at DESC LIMIT 1; 
 			'last_post' => array(self::HAS_ONE, 'Post', 'forum_id', 'order' => 't.created_at DESC'),
-			'topics' => array(self::HAS_MANY, 'Topic', 'forum_id', 'order' => 'sticky DESC, t.updated_at DESC'),
+			'topics' => array(self::HAS_MANY, 'Topic', 'forum_id', 'order' => 'sticky DESC, topics.updated_at DESC'),
 			'topics_count' => array(self::STAT, 'Topic', 'forum_id'),
 			'posts_count' => array(self::STAT, 'Post', 'forum_id'),
 		);
