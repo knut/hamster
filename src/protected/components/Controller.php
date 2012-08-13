@@ -24,4 +24,18 @@ class Controller extends CController
 	 * for more details on how to specify this property.
 	 */
 	public $breadcrumbs=array();
+
+	/**
+	 * Creates pagination by given total item count and page size. Returns pagination object which can be
+	 * used with the CLinkPager.
+	 * @param integer $itemCount total item count.
+	 * @param integer $pageSize page size.
+	 * @return CPagination pagination object.
+	 */
+	public function paginate($itemCount, $pageSize)
+	{
+		$pagination=new CPagination($itemCount);
+		$pagination->setPageSize($pageSize);
+		return $pagination;
+	}
 }
